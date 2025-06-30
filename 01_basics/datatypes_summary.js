@@ -34,6 +34,26 @@ console.log(typeof heroes);
 console.log(typeof anotherId);
 console.log(typeof myObj); 
 
+//Stack(Primitive)
+//Heap(non-primitive)
+ 
+let name="pushpraj";
+let anothername=name;
+anothername="raj";
+console.log(name);
+console.log(anothername);
+
+let userOne={
+    email:"user@gmail.com",
+    upi:"user@ybol"
+}
+
+let userTwo=userOne;
+userTwo.email="pushp@gmail.com"; //acessing element of object
+
+console.log(userOne);
+console.log(userTwo);
+
 
 
 
