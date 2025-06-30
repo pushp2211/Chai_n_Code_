@@ -35,5 +35,25 @@ let str2=" pushpraj"
 str3=str1+str2; //appending string directly
 console.log(str3);
 
+//complex conversion  
+console.log("1"+2) //pahle string h toh sab string 
+console.log(1+"2")  //string later then pahle ope ho jayenge
+console.log("1"+2+2)
+console.log(1+2+"2")
+
+console.log((3+4)*5%3);
+
+console.log(+true); //poss
+// console.log(true+); //not poss
+
+let num1,num2,num3
+num1= num2= num3= 2+2
+
+counter=100  //postfix prefix 
+counter++;   //post and pre increament or decrement
+console.log(counter);
+
+
+
 
 

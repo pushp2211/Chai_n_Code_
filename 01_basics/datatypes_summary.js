@@ -1,0 +1,40 @@
+//primitive 
+
+// 7 types:String ,Number,Null ,Boolean, undefined,Symbol ,BigInt
+
+const score=100 //js is dynamic typed language
+const ScoreValue=100.43
+
+const isLoggedIn=false
+const outsideTemp=null
+
+const id=Symbol('123')
+const anotherId=Symbol('123')
+
+console.log(id==anotherId);
+
+//refrence(Non Primitive)
+
+//Array, Objects ,Functions
+
+const heroes=["ab","bc","cd"];
+
+let myObj= {
+ name: "pushpraj", 
+ age:"22"
+}
+
+const myFunction=function(){
+    console.log("hello world");
+}
+
+//type of operator results
+
+console.log(typeof heroes);
+console.log(typeof anotherId);
+console.log(typeof myObj); 
+
+
+
+
+
