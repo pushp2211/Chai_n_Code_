@@ -54,4 +54,5 @@ const books=[
     }
 ]
 
-const userbooks=arr.filter(bk)=>bk.genre==
+const userbooks=books.filter( (bk) => bk.genre === "Fiction" && bk.publish < "1950");
+console.log(userbooks); // [{ title: 'The Great Gatsby', genre: 'Fiction
