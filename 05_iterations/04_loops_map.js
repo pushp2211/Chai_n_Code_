@@ -56,3 +56,6 @@ const books=[
 
 const userbooks=books.filter( (bk) => bk.genre === "Fiction" && bk.publish < "1950");
 console.log(userbooks); // [{ title: 'The Great Gatsby', genre: 'Fiction
+//', publish: '1925' }]
+
+// The filter method is used to create a new array with all elements that pass the test implemented by the provided function.
