@@ -3,14 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PS codes DOM</title>t</title>
+    <title>PS codes DOM</title>
 </head>
 <body style="background-color: black; color: white;">
     <ul class="language">
         <li>javascript</li>
     </ul>
 </body>
-<style>
+<script>
+    //adding values
+
+    function addLanguage(langName){
+        const li=document.createElement("li"); //it creates a new list item element
+        li.innerHTML=langName; //it sets the inner HTML of the list item to the language name
+        document.querySelector(".language").appendChild(li); //it appends the new list item to the existing list with class "language"
+    }
+    addLanguage("python"); // it adds Python to the list
+    addLanguage("java");
     
-</style>
+    //optimised version bcause it uses text node
+    function addOptiLanguage(langName){
+        const li=document.createElement("li");
+        li.appendChild(document.createTextNode(langName)); //it creates a text node with the language name and appends it to the list item
+    }
+    addOptiLanguage("C++"); // it adds C++ to the list
+
+    //edit
+
+    const secondlang=document.querySelector("li:nth-child(2)") //it selects the second list item
+    console.log(secondlang); //it logs the second list item to the console
+    const newLi=document.createElement("li"); //it creates a new list item element
+    newLi.textContent="Mojo";
+    secondLang.replaceWith(newLi); //it replaces the second list item with the new one
+
+    //edit
+    const firstLang=document.querySelector("li:first-child"); //it selects the first list item
+    firstLang.outerHTML=<li>Typescript</li>; //it replaces the first list item with a new one containing Typescript
+    
+    //delete
+    const lastLang=document.querySelector("li:last-child"); //it selects the last list item
+    lastLang.remove(); //it removes the last list item from the list
+
+    </script>
+
 </html>
