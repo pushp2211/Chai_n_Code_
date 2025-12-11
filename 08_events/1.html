@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html events</title>
+</head>
+<body>
+    <!-- writing some html code -->
+    <h1>Html Events</h1>
+    <button id="myBtn">Click Me</button>
+    <p>Events are actions that occur in the system you are programming, which the system tells you about so your code can respond to them as needed. Examples of events include user interactions like clicks, key presses, mouse movements, and form submissions.</p>
+    <!-- adding some images to demonstrate event handling  -->
+    <img id="myImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/500px-Image_created_with_a_mobile_phone.png" alt ="Placeholder Image">
+    <br>
+    <button id="changeImgBtn">Change Image</button>
+    </body>
+    <script>
+        //we write our js code here
+        document.getElementById("changeImgBtn").onclick = function() {
+            document.getElementById("myImg").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/TEIDE.JPG/500px-TEIDE.JPG";
+        };
+    </script>
+</html>
