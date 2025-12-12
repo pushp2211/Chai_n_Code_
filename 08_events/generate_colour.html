@@ -1,0 +1,42 @@
+<!-- generating colours after a set interval -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+</head>
+<body>
+    <h1>Generating Random Colours</h1> 
+
+    <button id="stop">Stop Colour Change</button>
+    <button id="start">Start Colour Change</button>
+</body>
+<script>
+    let colorIntervalId; 
+
+    const changeColor = function() {
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    // 1. Start the interval initially
+    colorIntervalId = setInterval(changeColor, 1000); 
+
+    // 2. Stop button functionality
+    document.getElementById('stop').addEventListener('click', function(){
+        clearInterval(colorIntervalId);
+        colorIntervalId = null; // <--- CRITICAL FIX: Reset the variable!
+        console.log("Color Change Stopped!");
+    });
+
+    // 3. Start button functionality
+    document.getElementById('start').addEventListener('click', function(){
+        // Now this check works because we set it to null above
+        if (!colorIntervalId) {
+            colorIntervalId = setInterval(changeColor, 1000);
+            console.log("Color Change Started!");
+        }
+    });
+</script>
+</html>

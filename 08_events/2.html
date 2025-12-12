@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1>Kun Faya Kun..start!</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){ //settimeout function is used to run a code after a certain time
+        console.log("Raj");
+    }, 2000);
+
+    const sayhello = function(){
+        console.log("Hello World!");
+    }
+
+    const changehead = function() {
+        document.querySelector('h1').innerHTML = "Welcome to JS Events..end!";
+    }
+
+    // setInterval(changehead, 3000);  <-- DELETE THIS LINE (This was the problem!)
+    setInterval(sayhello, 2200); //set interval to run sayhello every 2.2 seconds
+
+    // This variable starts the timer AND stores the ID so we can stop it later
+    let intervalId = setInterval(changehead, 3000);
+
+    // Fix the syntax here: 'addEventListener' must be one word
+    document.getElementById('stop').addEventListener('click', function(){
+        clearInterval(intervalId);
+        console.log("Stopped!"); // Optional: just to check in console
+    });
+</script>
+</html>

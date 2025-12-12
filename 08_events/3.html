@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1>Stop and Start both.</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    // This background timer just proves the console is active
+    setInterval(function(){
+       console.log("I am Running", Date.now());
+    }, 2000);
+
+    let intervalId; 
+
+    const changehead = function() {
+        // I added Date.now() here so you can SEE the text changing!
+        document.querySelector('h1').innerHTML = "JS Events are Awesome! " + Date.now();
+    }
+
+    // 1. Start the interval initially
+    intervalId = setInterval(changehead, 1000); 
+
+    // 2. Stop button functionality
+    document.getElementById('stop').addEventListener('click', function(){
+        clearInterval(intervalId);
+        intervalId = null; // <--- CRITICAL FIX: Reset the variable!
+        console.log("Interval Stopped!");
+    });
+
+    // 3. Start button functionality
+    document.getElementById('start').addEventListener('click', function(){
+        // Now this check works because we set it to null above
+        if (!intervalId) {
+            intervalId = setInterval(changehead, 1000);
+            console.log("Interval Started!");
+        }
+    });
+</script> 
+</html>
