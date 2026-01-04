@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(88, 73, 54); color: white; font-size: 30px;">
+    0 Unsent  client has been created.open() not called yet.
+    1 Opened  open() has been called.
+    2 Headers Received  send() has been called, and headers and status are available.
+    3 Loading  Downloading; responseText holds partial data.
+    4 Done  The operation is complete.
+</body>
+<script>
+     const xhr = new XMLHttpRequest();
+     xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1', true);
+     xhr.onreadystatechange = function() {
+        console.log('Ready State changed to:', xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log('Response Text:', this.responseText); //response is ready
+        }
+     };
+    
+     xhr.send();
+     //what is happening here is that we are making an API request to a placeholder API and logging the ready state changes to the console.
+     //this helps us understand the different stages of the request lifecycle.
+     //we do api call asynchronously by passing true as the third parameter to open() method.
+     //but is this standard way of making API calls in javascript? no, nowadays we use fetch API or libraries like axios for making API requests as they provide
+</script>
+</html>
